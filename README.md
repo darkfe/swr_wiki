@@ -1,4 +1,4 @@
 swr_wiki
 ========
 
-swr is fucking simple dead wiki system.
+swr is fucking simple damn wiki system.
