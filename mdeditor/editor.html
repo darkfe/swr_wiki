@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Markdown Editor</title>
+    <meta charset="utf8"/>
+    <link rel="stylesheet" href="res/css/github-global.css"/>
+    <link rel="stylesheet" href="res/css/github-ui.css"/>
+</head>
+<body class="dark-theme">
+
+<div class="bubble">
+    <div class="comment-content ">
+        <div class="bubble-inner">
+            <div class="js-previewable-comment-form previewable-comment-form write-selected">
+                <div class="comment-form-head tabnav">
+                    <ul class="tabnav-tabs">
+                        <li><a href="#write_bucket_" data-tab="write-selected"
+                               class="tabnav-tab write-tab js-write-tab selected">书写</a>
+                        </li>
+                        <li><a href="#preview_bucket_"
+                               class="tabnav-tab preview-tab js-preview-tab" data-tab="preview-selected">预览</a></li>
+                    </ul>
+                </div>
+
+                <div class="write-content js-write-bucket js-uploadable-container upload-enabled is-default">
+
+                    <a href="#fullscreen_issue_body" class="enable-fullscreen js-enable-fullscreen tooltipped
+  leftwards " original-title="禅(zhuang)道(bi)模式">
+                        <span class="octicon octicon-screen-full"></span>
+                    </a>
+
+                    <textarea name="issue[body]" tabindex="1" placeholder="快来写点啥"
+                              class="js-comment-field js-size-to-fit js-quote-selection-target  input-with-fullscreen-icon"
+                            ></textarea>
+
+                    <p class="drag-and-drop">
+                            <span class="default">
+                                你可以通过拖拽或粘贴来上传图片.
+                            </span>
+                    </p>
+                </div>
+                <div class="preview-content js-preview-bucket">
+                    <div class="js-comment-body comment-body markdown-body">
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.comment-content -->
+        </div>
+    </div>
+</div>
+<div class="form-actions">
+    <button type="submit" class="button primary" tabindex="1">
+        提交
+    </button>
+</div>
+
+<div class="fullscreen-overlay js-fullscreen-overlay dark-theme" id="fullscreen_overlay">
+    <div class="fullscreen-container js-fullscreen-container">
+        <div class="textarea-wrap">
+            <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents"
+                      placeholder="快来写点啥"></textarea>
+        </div>
+    </div>
+    <div class="fullscreen-sidebar">
+        <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards"
+           original-title="关闭禅模式">
+            <span class="mega-octicon octicon-screen-normal"></span>
+        </a>
+        <a href="#" class="theme-switcher js-theme-switcher tooltipped leftwards"
+           original-title="切换主题">
+            <span class="octicon octicon-color-mode"></span>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript" src="res/js/jquery.min.js"></script>
+<script type="text/javascript" src="res/js/marked.js"></script>
+<script type="text/javascript" src="res/js/highlight.pack.js"></script>
+<script type="text/javascript" src="res/js/inline-attach.js"></script>
+<script type="text/javascript" src="res/js/jquery.tipsy.js"></script>
+
+<script type="text/javascript">
+
+    marked.setOptions({
+        gfm        : true,
+        tables     : true,
+        breaks     : false,
+        pedantic   : false,
+        sanitize   : false,
+        smartLists : true,
+        smartypants: false
+    });
+
+    $(document).on('click', '.tabnav-tab', function () {
+        var $tab = $(this).closest('.tabnav-tabs').find('.tabnav-tab');
+        $tab.removeClass('selected');
+        $(this).addClass('selected');
+
+        var $parent = $(this).closest('.js-previewable-comment-form')
+        $parent.removeClass('write-selected preview-selected');
+        $parent.addClass($(this).attr('data-tab'));
+    })
+
+    $(document).on('click', '.js-preview-tab', function () {
+        var $parent = $(this).closest('.js-previewable-comment-form');
+        var $textarea = $parent.find('.js-comment-field');
+        var $preview = $parent.find('.js-comment-body');
+        var text = $textarea.val();
+
+        marked(text, function (err, content) {
+            if (err) throw err;
+            $preview.html(content);
+            //hljs.configure({useBR: true});
+            $preview.find('code').each(function (i, e) {
+                $(e).addClass('highlight');
+                hljs.highlightBlock(e)
+            });
+        });
+    });
+
+    //全屏模式
+    $(document).on('click', '.js-enable-fullscreen', function (e) {
+        e.preventDefault();
+        var $textarea = $(this).closest('.js-previewable-comment-form').find('.js-comment-field');
+        $(document).data('last-textarea', $textarea);
+        $('.js-fullscreen-overlay').show();
+        $('#fullscreen-contents').val($textarea.val());
+        $(document.body).addClass('fullscreen-overlay-enabled');
+    })
+
+    //退出全屏模式
+    $(document).on('click', '.js-exit-fullscreen', function (e) {
+        e.preventDefault();
+        $('.js-fullscreen-overlay').hide();
+        var $textarea = $(document).data('last-textarea');
+        $textarea.val($('#fullscreen-contents').val());
+        $(document.body).removeClass('fullscreen-overlay-enabled');
+    })
+
+    //切换全屏模式的主体
+    $(document).on('click', '.js-theme-switcher', function (e) {
+        e.preventDefault();
+        $(document.body).toggleClass('dark-theme');
+        $('.js-fullscreen-overlay').toggleClass('dark-theme');
+    })
+
+    //工具条
+    $('.tooltipped').tipsy({gravity: 'e'})
+
+    //粘贴和拖拽上传支持
+    inlineAttach.attachToInput($('.js-comment-field').get(0));
+</script>
+</body>
+</html>

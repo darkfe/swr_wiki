@@ -1,0 +1,554 @@
+/*
+	Markdown Github 样式
+*/
+
+.markdown-body {
+	font-size:15px;
+	line-height:1.7;
+	overflow:hidden;
+	word-wrap:break-word
+}
+.markdown-body>*:first-child {
+	margin-top:0 !important
+}
+.markdown-body>*:last-child {
+	margin-bottom:0 !important
+}
+.markdown-body a.absent {
+	color:#c00
+}
+.markdown-body a.anchor {
+	display:block;
+	padding-right:6px;
+	padding-left:30px;
+	margin-left:-30px;
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0
+}
+.markdown-body a.anchor:focus {
+	outline:none
+}
+.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6 {
+	margin:1em 0 15px;
+	padding:0;
+	font-weight:bold;
+	line-height:1.7;
+	cursor:text;
+	position:relative
+}
+.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link {
+	display:none;
+	color:#000
+}
+.markdown-body h1:hover a.anchor,.markdown-body h2:hover a.anchor,.markdown-body h3:hover a.anchor,.markdown-body h4:hover a.anchor,.markdown-body h5:hover a.anchor,.markdown-body h6:hover a.anchor {
+	text-decoration:none;
+	line-height:1;
+	padding-left:8px;
+	margin-left:-30px;
+	top:15%
+}
+.markdown-body h1:hover a.anchor .octicon-link,.markdown-body h2:hover a.anchor .octicon-link,.markdown-body h3:hover a.anchor .octicon-link,.markdown-body h4:hover a.anchor .octicon-link,.markdown-body h5:hover a.anchor .octicon-link,.markdown-body h6:hover a.anchor .octicon-link {
+	display:inline-block
+}
+.markdown-body h1 tt,.markdown-body h1 code,.markdown-body h2 tt,.markdown-body h2 code,.markdown-body h3 tt,.markdown-body h3 code,.markdown-body h4 tt,.markdown-body h4 code,.markdown-body h5 tt,.markdown-body h5 code,.markdown-body h6 tt,.markdown-body h6 code {
+	font-size:inherit
+}
+.markdown-body h1 {
+	font-size:2.5em;
+	border-bottom:1px solid #ddd
+}
+.markdown-body h2 {
+	font-size:2em;
+	border-bottom:1px solid #eee
+}
+.markdown-body h3 {
+	font-size:1.5em
+}
+.markdown-body h4 {
+	font-size:1.2em
+}
+.markdown-body h5 {
+	font-size:1em
+}
+.markdown-body h6 {
+	color:#777;
+	font-size:1em
+}
+.markdown-body p,.markdown-body blockquote,.markdown-body ul,.markdown-body ol,.markdown-body dl,.markdown-body table,.markdown-body pre {
+	margin:15px 0
+}
+.markdown-body hr {
+	background:transparent url("/assets/primer/markdown/dirty-shade-a46e6e1679bb726b30abdfdb0d08835b1681c46a.png") repeat-x 0 0;
+	border:0 none;
+	color:#ccc;
+	height:4px;
+	padding:0;
+	margin:15px 0
+}
+.markdown-body ul,.markdown-body ol {
+	padding-left:30px
+}
+.markdown-body ul.no-list,.markdown-body ol.no-list {
+	list-style-type:none;
+	padding:0
+}
+.markdown-body ul ul,.markdown-body ul ol,.markdown-body ol ol,.markdown-body ol ul {
+	margin-top:0;
+	margin-bottom:0
+}
+.markdown-body dl {
+	padding:0
+}
+.markdown-body dl dt {
+	font-size:14px;
+	font-weight:bold;
+	font-style:italic;
+	padding:0;
+	margin-top:15px
+}
+.markdown-body dl dd {
+	margin-bottom:15px;
+	padding:0 15px
+}
+.markdown-body blockquote {
+	border-left:4px solid #DDD;
+	padding:0 15px;
+	color:#777
+}
+.markdown-body blockquote>:first-child {
+	margin-top:0px
+}
+.markdown-body blockquote>:last-child {
+	margin-bottom:0px
+}
+.markdown-body table {
+	width:100%;
+	overflow:auto;
+	display:block
+}
+.markdown-body table th {
+	font-weight:bold
+}
+.markdown-body table th,.markdown-body table td {
+	border:1px solid #ddd;
+	padding:6px 13px
+}
+.markdown-body table tr {
+	border-top:1px solid #ccc;
+	background-color:#fff
+}
+.markdown-body table tr:nth-child(2n) {
+	background-color:#f8f8f8
+}
+.markdown-body img {
+	max-width:100%;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
+.markdown-body span.frame {
+	display:block;
+	overflow:hidden
+}
+.markdown-body span.frame>span {
+	border:1px solid #ddd;
+	display:block;
+	float:left;
+	overflow:hidden;
+	margin:13px 0 0;
+	padding:7px;
+	width:auto
+}
+.markdown-body span.frame span img {
+	display:block;
+	float:left
+}
+.markdown-body span.frame span span {
+	clear:both;
+	color:#333;
+	display:block;
+	padding:5px 0 0
+}
+.markdown-body span.align-center {
+	display:block;
+	overflow:hidden;
+	clear:both
+}
+.markdown-body span.align-center>span {
+	display:block;
+	overflow:hidden;
+	margin:13px auto 0;
+	text-align:center
+}
+.markdown-body span.align-center span img {
+	margin:0 auto;
+	text-align:center
+}
+.markdown-body span.align-right {
+	display:block;
+	overflow:hidden;
+	clear:both
+}
+.markdown-body span.align-right>span {
+	display:block;
+	overflow:hidden;
+	margin:13px 0 0;
+	text-align:right
+}
+.markdown-body span.align-right span img {
+	margin:0;
+	text-align:right
+}
+.markdown-body span.float-left {
+	display:block;
+	margin-right:13px;
+	overflow:hidden;
+	float:left
+}
+.markdown-body span.float-left span {
+	margin:13px 0 0
+}
+.markdown-body span.float-right {
+	display:block;
+	margin-left:13px;
+	overflow:hidden;
+	float:right
+}
+.markdown-body span.float-right>span {
+	display:block;
+	overflow:hidden;
+	margin:13px auto 0;
+	text-align:right
+}
+.markdown-body code,.markdown-body tt {
+	margin:0 2px;
+	padding:0px 5px;
+	border:1px solid #ddd;
+	background-color:#f8f8f8;
+	border-radius:3px
+}
+.markdown-body code {
+	white-space:nowrap
+}
+.markdown-body pre>code {
+	margin:0;
+	padding:0;
+	white-space:pre;
+	border:none;
+	background:transparent
+}
+.markdown-body .highlight pre,.markdown-body pre {
+	background-color:#f8f8f8;
+	border:1px solid #ddd;
+	font-size:13px;
+	line-height:19px;
+	overflow:auto;
+	padding:6px 10px;
+	border-radius:3px
+}
+.markdown-body pre {
+	word-wrap:normal
+}
+.markdown-body pre code,.markdown-body pre tt {
+	margin:0;
+	padding:0;
+	background-color:transparent;
+	border:none;
+	word-wrap:normal
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+语法高亮
+
+*/
+
+pre code {
+	display: block; padding: 0.5em;
+	color: #333;
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+	color: #998;
+	font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .nginx .title,
+pre .subst,
+pre .request,
+pre .status {
+	color: #333;
+	font-weight: bold
+}
+
+pre .number,
+pre .hexcolor,
+pre .ruby .constant {
+	color: #099;
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+	color: #d14
+}
+
+pre .title,
+pre .id,
+pre .coffeescript .params,
+pre .scss .preprocessor {
+	color: #900;
+	font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .clojure .title,
+pre .subst {
+	font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .type,
+pre .vhdl .literal,
+pre .tex .command {
+	color: #458;
+	font-weight: bold
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+	color: #000080;
+	font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .lisp .body {
+	color: #008080
+}
+
+pre .regexp {
+	color: #009926
+}
+
+pre .class {
+	color: #458;
+	font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .lisp .keyword,
+pre .tex .special,
+pre .prompt {
+	color: #990073
+}
+
+pre .built_in,
+pre .lisp .title,
+pre .clojure .built_in {
+	color: #0086b3
+}
+
+pre .preprocessor,
+pre .pragma,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+	color: #999;
+	font-weight: bold
+}
+
+pre .deletion {
+	background: #fdd
+}
+
+pre .addition {
+	background: #dfd
+}
+
+pre .diff .change {
+	background: #0086b3
+}
+
+pre .chunk {
+	color: #aaa
+}
+
+/**************************************
+**************************************/
+
+.write-content .enable-fullscreen {
+	position: absolute;
+	top: 5px;
+	right: 16px;
+	color: #333;
+	opacity: .5;
+	line-height: 1em;
+}
+.write-content {
+	position: relative;
+}
+
+.bubble {
+	padding: 3px;
+	background: #EEE;
+	border-radius: 3px;
+}
+
+.bubble-inner {
+	min-height: 32px;
+	border: 1px solid #CACACA;
+	background-color: #FFF;
+}
+
+.enable-fullscreen.minibutton {
+	display:inline-block;
+	margin-top:4px;
+	margin-left:5px;
+	padding:0 6px
+}
+.enable-fullscreen.minibutton .octicon {
+	margin-right:0
+}
+.new-file .enable-fullscreen {
+	margin-left:11px
+}
+.write-content {
+	position:relative
+}
+.write-content .enable-fullscreen {
+	position:absolute;
+	top:5px;
+	right:16px;
+	color:#333333;
+	opacity:.5;
+	line-height:1em
+}
+.write-content .enable-fullscreen:hover {
+	opacity:1
+}
+.fullscreen-overlay {
+	display:none;
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:#fff;
+	text-shadow:none;
+	z-index:1000
+}
+.fullscreen-overlay .fullscreen-container {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	max-width:800px;
+	height:100%;
+	margin:0 auto;
+	padding:30px 0
+}
+.fullscreen-overlay .textarea-wrap {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	width:100%;
+	height:100%;
+	position:relative
+}
+.fullscreen-overlay textarea {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	width:100%;
+	height:100%;
+	padding:20px;
+	border:0;
+	background:#fff;
+	color:#999999;
+	font-size:21px;
+	line-height:1.6em;
+	resize:none;
+	-moz-transition:color 0.15s ease-in 0;
+	-webkit-transition:color 0.15s ease-in 0;
+	transition:color 0.15s ease-in 0;
+	box-shadow:none
+}
+.fullscreen-overlay textarea:focus,.fullscreen-overlay textarea:hover {
+	outline:none;
+	color:#333333
+}
+.fullscreen-overlay .fullscreen-sidebar {
+	position:absolute;
+	top:30px;
+	right:30px;
+	text-align:right;
+	z-index:1002
+}
+.fullscreen-overlay .fullscreen-sidebar .exit-fullscreen,.fullscreen-overlay .fullscreen-sidebar .fullscreen-info,.fullscreen-overlay .fullscreen-sidebar .theme-switcher {
+	color:#b3b3b3;
+	float:right;
+	clear:right;
+	margin-bottom:15px
+}
+.fullscreen-overlay .fullscreen-sidebar .exit-fullscreen:hover,.fullscreen-overlay .fullscreen-sidebar .fullscreen-info:hover,.fullscreen-overlay .fullscreen-sidebar .theme-switcher:hover {
+	color:#333333;
+	text-shadow:0 0 10px #fff
+}
+.fullscreen-overlay .fullscreen-sidebar .theme-switcher {
+	margin-right:8px
+}
+.fullscreen-overlay.dark-theme {
+	background:#1d1f21
+}
+.fullscreen-overlay.dark-theme textarea {
+	background:#1d1f21;
+	color:#a4b1b1
+}
+.fullscreen-overlay.dark-theme textarea:focus,.fullscreen-overlay.dark-theme textarea:hover {
+	color:#dbe0e0
+}
+.fullscreen-overlay.dark-theme .fullscreen-sidebar {
+	color:#dbe0e0
+}
+.fullscreen-overlay.dark-theme .fullscreen-sidebar .exit-fullscreen,.fullscreen-overlay.dark-theme .fullscreen-sidebar .theme-switcher {
+	color:#a4b1b1
+}
+.fullscreen-overlay.dark-theme .fullscreen-sidebar .exit-fullscreen:hover,.fullscreen-overlay.dark-theme .fullscreen-sidebar .theme-switcher:hover {
+	color:#dbe0e0;
+	text-shadow:0 0 10px #000
+}
+.fullscreen-overlay .suggester-container {
+	top:5px;
+	left:0
+}
+.fullscreen-overlay-enabled .wrapper,.fullscreen-overlay-enabled #footer {
+	display:none
+}
+.fullscreen-overlay-enabled .fullscreen-overlay {
+	display:block
+}
+.previewable-comment-form .input-with-fullscreen-icon {
+	padding-right:24px;
+	margin-right:-24px
+}
+.previewable-comment-form .upload-enabled .fullscreen-overlay textarea {
+	max-height:none;
+	border:none;
+	border-radius:0
+}
